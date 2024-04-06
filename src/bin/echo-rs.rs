@@ -1,9 +1,9 @@
 use clap::{App, Arg};
 
 fn main() {
-    let matches = App::new("echor")
-        .version("0.1.0")
-        .author("Andy")
+    let matches = App::new("echo-rs")
+        .version("1.0.0")
+        .author("Andy Weaver")
         .about("Rust version of echo")
         .arg(
             Arg::with_name("text")
