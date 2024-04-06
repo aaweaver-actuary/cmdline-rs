@@ -4,7 +4,7 @@ use std::fs;
 
 #[test]
 fn dies_no_args() {
-    let mut cmd = Command::cargo_bin("echor").unwrap();
+    let mut cmd = Command::cargo_bin("echo-rs").unwrap();
     cmd.assert()
         .failure()
         .stderr(predicate::str::contains("USAGE"));
@@ -12,19 +12,19 @@ fn dies_no_args() {
 
 #[test]
 fn runs() {
-    let mut cmd = Command::cargo_bin("echor").unwrap();
+    let mut cmd = Command::cargo_bin("echo-rs").unwrap();
     cmd.arg("Hi there").assert().success().stdout("Hi there\n");
 }
 
 #[test]
 fn one_word_no_flag() {
-    let mut cmd = Command::cargo_bin("echor").unwrap();
+    let mut cmd = Command::cargo_bin("echo-rs").unwrap();
     cmd.arg("Hello").assert().success().stdout("Hello\n");
 }
 
 #[test]
 fn one_word_with_n_flag() {
-    let mut cmd = Command::cargo_bin("echor").unwrap();
+    let mut cmd = Command::cargo_bin("echo-rs").unwrap();
     cmd.arg("-n")
         .arg("Hello")
         .assert()
@@ -34,7 +34,7 @@ fn one_word_with_n_flag() {
 
 #[test]
 fn two_words_no_flag() {
-    let mut cmd = Command::cargo_bin("echor").unwrap();
+    let mut cmd = Command::cargo_bin("echo-rs").unwrap();
     cmd.arg("Hello there")
         .assert()
         .success()
@@ -43,7 +43,7 @@ fn two_words_no_flag() {
 
 #[test]
 fn two_words_with_n_flag() {
-    let mut cmd = Command::cargo_bin("echor").unwrap();
+    let mut cmd = Command::cargo_bin("echo-rs").unwrap();
     cmd.arg("-n")
         .arg("Hello there")
         .assert()
@@ -53,7 +53,7 @@ fn two_words_with_n_flag() {
 
 #[test]
 fn word_flag_no_space() {
-    let mut cmd = Command::cargo_bin("echor").unwrap();
+    let mut cmd = Command::cargo_bin("echo-rs").unwrap();
     cmd.arg("-nHello")
         .assert()
         .failure()
@@ -62,7 +62,7 @@ fn word_flag_no_space() {
 
 fn compare_output_arr(outfile: &str, args_passed: &[&str]) {
     let expected = fs::read_to_string(outfile).expect("can't read the dang file");
-    let mut cmd = Command::cargo_bin("echor").unwrap();
+    let mut cmd = Command::cargo_bin("echo-rs").unwrap();
 
     for a in args_passed {
         cmd.arg(a);

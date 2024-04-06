@@ -3,8 +3,6 @@ name = "cmdline-rs"
 version = "0.1.0"
 edition = "2021"
 
-[bin]
-
 [dependencies]
 clap="2.33"
 
