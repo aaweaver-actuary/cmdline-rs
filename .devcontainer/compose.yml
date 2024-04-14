@@ -1,0 +1,8 @@
+services:
+  cmdline-rs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/cmdline-rs
+    command: /bin/zsh

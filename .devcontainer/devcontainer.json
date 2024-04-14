@@ -1,0 +1,29 @@
+{
+    "name": "Rust Development Container",
+    "dockerComposeFile": "compose.yml",
+    "service": "cmdline-rs",
+    "workspaceFolder": "/cmdline-rs",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "usernamehw.errorlens",
+                "GitHub.remotehub",
+                "vscode-icons-team.vscode-icons",
+                "tamasfe.even-better-toml",
+                "rust-lang.rust-analyzer",
+                "dustypomerleau.rust-syntax",
+                "vadimcn.vscode-lldb",
+                "serayuzgur.crates"
+            ]
+        }
+    },
+    "containerEnv": {
+        "RUST_BACKTRACE": "1"
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "postCreateCommand": "cargo build"
+}
