@@ -15,7 +15,8 @@
                 "rust-lang.rust-analyzer",
                 "dustypomerleau.rust-syntax",
                 "vadimcn.vscode-lldb",
-                "serayuzgur.crates"
+                "serayuzgur.crates",
+                "ms-azuretools.vscode-docker"
             ]
         }
     },
